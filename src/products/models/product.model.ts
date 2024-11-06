@@ -11,6 +11,7 @@ export class Product extends Model<ProductDto, Optional<ProductCreateDto, 'id'>>
   public description!: string;
   public price!: number;
   public stock!: number;
+  public isActive!: boolean;
   public created_at!: Date;
   public updated_at!: Date;
   public deleted_at!: Date;
@@ -37,6 +38,10 @@ initModel(Product, {
   },
   stock: {
     type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  isActive: {
+    type: DataTypes.BOOLEAN,
     allowNull: false,
   },
 }, 'products')
