@@ -7,7 +7,7 @@ const router = Router();
 router.get('/', controller(findAll))
 router.get('/:id', controller(findOne))
 router.post('/', controller(create))
-router.delete('/id', controller(remove))
+router.delete('/:id', controller(remove))
 router.get('/sort', controller(sortBy))
 
 export default router;
