@@ -9,6 +9,12 @@ export async function findAll(req: Request, res: Response) {
     return res.json(records)
 }
 
+export async function findOne(req: Request, res: Response) {
+    const { id } = req.params
+    const record = await productService.findOne(+id)
+    return res.json(record)
+}
+
 export async function create(req: Request, res: Response) {
     const record = await productService.create(req.body)
     return res.status(201).json({message: 'Product created successfully', data: record})
