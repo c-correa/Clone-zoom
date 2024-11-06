@@ -23,8 +23,12 @@ export default class Service {
   //   return await this.model.update(data, { where });
   // }
 
-  public delete(id: number) {
-    const filteredProducts = products.filter((product) => product.id !== id);
-    return filteredProducts.pop();
+  public delete(id: number): boolean {
+    const index = products.findIndex(product => product.id === id);
+  
+    if (index === -1) throw new Error('Product not found')
+  
+    products.splice(index, 1);
+    return true
   }
 }
