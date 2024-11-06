@@ -20,6 +20,18 @@ export async function create(req: Request, res: Response) {
     return res.status(201).json({message: 'Product created successfully', data: record})
 }
 
+export async function remove(req: Request, res: Response) {
+    const { id } = req.params
+    productService.delete(+id)
+    return res.status(201).json({message: 'Product removed successfully'})
+}
+
+// export async function update(req: Request, res: Response) {
+//     const { id } = req.params
+//     const record = await productService.(+id, req.body)
+//     return res.status(201).json({message: 'Product updated successfully', data: record})
+// }
+
 export async function sortBy(req: Request, res: Response) {
     const { sortBy } = req.query as { sortBy: keyof ProductDto }
     if (!sortBy) {

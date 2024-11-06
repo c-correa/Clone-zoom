@@ -7,15 +7,15 @@ import { products } from "./dataFake";
 export default class Service {
   // constructor(private model: ModelStatic<T>) {}
 
-  public async create(data: ProductCreateDto) {
+  public create(data: ProductCreateDto) {
     return products.push(data);
   }
 
-  public async findOne(id: number) {
+  public findOne(id: number) {
     return products.find((product) => product.id === id);
   }
 
-  public async findAll() {
+  public findAll() {
     return products
   }
 
@@ -23,7 +23,7 @@ export default class Service {
   //   return await this.model.update(data, { where });
   // }
 
-  public async delete(id: number) {
+  public delete(id: number) {
     const filteredProducts = products.filter((product) => product.id !== id);
     return filteredProducts.pop();
   }
