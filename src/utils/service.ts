@@ -19,16 +19,20 @@ export default class Service {
     return products
   }
 
-  // public async update(where: WhereOptions<T>, data: any) {
-  //   return await this.model.update(data, { where });
-  // }
+  public update(id: number, data: ProductCreateDto) {
+    const record = products.find(product => product.id === id);
+    if (!record) throw new Error('Product not found')
+
+    return Object.assign(record, data)
+  }
 
   public delete(id: number): boolean {
-    const index = products.findIndex(product => product.id === id);
+    const record = products.find(product => {product.id === id, product.deleted_at = null});
   
-    if (index === -1) throw new Error('Product not found')
-  
-    products.splice(index, 1);
+    if (!record) throw new Error('Product not found')
+
+    record.isActive = false
+    record.deleted_at = new Date()
     return true
   }
 }

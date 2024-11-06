@@ -5,4 +5,5 @@ export interface ProductDto extends EntityRead {
   description: string;
   price: number;
   stock: number;
+  isActive: boolean
 }
