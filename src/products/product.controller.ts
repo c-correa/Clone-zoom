@@ -5,7 +5,7 @@ import { Product } from "./models/product.model";
 import { ProductDto } from "./dto/product.dto";
 
 export async function findAll(req: Request, res: Response) {
-    const records = await productService.findAll('id')
+    const records = await productService.findAll()
     return res.json(records)
 }
 
@@ -19,7 +19,7 @@ export async function sortBy(req: Request, res: Response) {
     if (!sortBy) {
         return res.status(400).json({message: 'sortBy is required'})
     }
-    const records = await productService.findAll(sortBy)
+    const records = await productService.findAll()
     return res.json(records)
 }
 

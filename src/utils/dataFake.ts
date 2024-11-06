@@ -1,6 +1,8 @@
 import { ProductDto } from "../products/dto/product.dto";
+import { EntityRead } from "./entityRead";
+export interface ProductReadDto extends ProductDto, EntityRead {}
 
-export const products: ProductDto[] = [
+export const products: ProductReadDto[] = [
     {
       id: 1,
       name: "Product 1",

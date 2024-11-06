@@ -1,10 +1,8 @@
-export interface ProductDto {
-  id: number;
+import { EntityRead } from "../../utils/entityRead";
+
+export interface ProductDto extends EntityRead {
   name: string;
   description: string;
   price: number;
   stock: number;
-  created_at: Date;
-  updated_at: Date;
-  deleted_at?: Date | null;
 }

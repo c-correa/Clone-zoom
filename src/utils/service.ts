@@ -15,8 +15,8 @@ export default class Service {
     return products.find((product) => product.id === id);
   }
 
-  public async findAll(sortBy: keyof ProductDto) {
-    return quickSortByKey(products, sortBy)
+  public async findAll() {
+    return products
   }
 
   // public async update(where: WhereOptions<T>, data: any) {
