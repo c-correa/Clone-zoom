@@ -3,7 +3,7 @@ import { ProductDto } from "../products/dto/product.dto";
 export const products: ProductDto[] = [
     {
       id: 1,
-      name: "Product 1",
+      name: "Alfajores",
       description: "Description 1",
       stock: 10,
       price: 19.99,
@@ -14,7 +14,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 2,
-      name: "Product 2",
+      name: "Auriculares inalámbricos",
       description: "Description 2",
       stock: 1,
       price: 9.99,
@@ -25,7 +25,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 3,
-      name: "Product 3",
+      name: "Aceite",
       description: "Description 3",
       stock: 15,
       price: 39.99,
@@ -36,7 +36,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 4,
-      name: "Product 4",
+      name: "Cámara digital",
       description: "Description 4",
       stock: 5,
       price: 49.99,
@@ -69,7 +69,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 7,
-      name: "Product 7",
+      name: "Café",
       description: "Description 7",
       stock: 25,
       price: 79.99,
@@ -80,7 +80,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 8,
-      name: "Product 8",
+      name: "Leche",
       description: "Description 8",
       stock: 30,
       price: 89.99,
@@ -91,7 +91,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 9,
-      name: "Product 9",
+      name: "Arroz",
       description: "Description 9",
       stock: 18,
       price: 99.99,
@@ -102,7 +102,7 @@ export const products: ProductDto[] = [
     },
     {
       id: 10,
-      name: "Product 10",
+      name: "Lentejas",
       description: "Description 10",
       stock: 22,
       price: 109.99,

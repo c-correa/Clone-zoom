@@ -5,10 +5,9 @@ import { ProductDto } from "../products/dto/product.dto";
 import { products } from "./dataFake";
 
 export default class Service {
-  // constructor(private model: ModelStatic<T>) {}
 
   public create(data: ProductCreateDto) {
-    return products.push(data);
+    return products.push({...data, deleted_at: null, isActive: true, created_at: new Date(), updated_at: new Date()});
   }
 
   public findOne(id: number) {
@@ -16,7 +15,7 @@ export default class Service {
   }
 
   public findAll() {
-    return products
+    return products.filter(product => product.deleted_at === null)
   }
 
   public update(id: number, data: ProductCreateDto) {
@@ -27,12 +26,18 @@ export default class Service {
   }
 
   public delete(id: number): boolean {
-    const record = products.find(product => {product.id === id, product.deleted_at = null});
-  
+    const record = products.find(product => product.id === id);
+    
     if (!record) throw new Error('Product not found')
 
     record.isActive = false
     record.deleted_at = new Date()
     return true
+  }
+
+  public sort(sortKey: keyof ProductDto, order: 'ASC' | 'DESC' = 'ASC'): ProductDto[] {
+    const activeProducts = products.filter(product => product.deleted_at === null);
+
+    return quickSortByKey<any>(activeProducts, sortKey, order)
   }
 }
